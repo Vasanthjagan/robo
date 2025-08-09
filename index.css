@@ -1,0 +1,207 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 50px;
+    background-color: blanchedalmond;
+    animation-name: example2;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+}
+@keyframes example2 {
+    0%{top:0px;background-color: rosybrown;}
+    25%{top:0px;background-color: yellow;}
+    50%{top:0px;background-color: antiquewhite;}
+    75%{top:0px;background-color: brown;}
+    100%{top:0px;background-color: slateblue;}
+}
+#robot {
+     position: relative;
+     animation: runRobot 2s infinite alternate linear;
+    animation: danceRobot 2s infinite linear;
+     display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+@keyframes runRobot {
+    0%   { left: 0; }
+    100% { left: calc(100vw - 80px); } /* Screen width - emoji width */
+}
+@keyframes danceRobot {
+    0%   { transform: translate(0, 0) rotate(0deg); }
+    20%  { transform: translate(100px, 0) rotate(20deg); }
+    40%  { transform: translate(100px, 100px) rotate(-20deg); }
+    60%  { transform: translate(-100px, 100px) rotate(20deg); }
+    80%  { transform: translate(-100px, -100px) rotate(-20deg); }
+    100% { transform: translate(0, 0) rotate(0deg); }
+}
+@keyframes danceSide {
+    0%   { transform: translateX(0) rotate(0deg); }
+    50%  { transform: translateX(50px) rotate(20deg); }
+    100% { transform: translateX(-50px) rotate(-20deg); }
+}
+#face {
+    height: 200px;
+    width: 200px;
+    margin-left: -10px;
+    background-color: yellow;
+    border-radius: 45px;
+    box-shadow: 10px 0px 45px red;
+    display: flex;
+    flex-direction: column;
+    animation: headSpin 2s infinite linear;
+    align-items: center;
+     animation-name: example;
+     animation-duration: 1s;
+     animation-iteration-count: infinite;
+}
+@keyframes  example {
+  0% {top: 0px; background-color: yellow;}
+  10% {top: 200px;background-color: blue;}
+  20% {top: 200px;background-color: gray;}
+  30% {top: 200px;background-color: red;}
+  40% {top: 200px;background-color: green;}
+  50% {top: 200px;background-color: blue;}
+  60% {top: 200px;background-color: paleturquoise;}
+  70% {top: 200px;background-color: purple;}
+  80% {top: 200px;background-color: hotpink;}
+  90% {top: 200px;background-color:seashell;}
+  1000% {top: 200px;background-color: turquoise;}
+}
+@keyframes headSpin {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+#eyes {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 40px;
+}
+.eye {
+    background-color: black;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    position: relative;
+}
+.iris {
+    background-color: whitesmoke;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    margin: auto;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+#mouth {
+    height: 30px;
+    width: 80px;
+    background-color: black;
+    border-radius: 0% 0% 50% 50%;
+    margin-top: 20px;
+    position: relative;
+    overflow: hidden;
+}
+#tongue {
+    height: 10px;
+    width: 50px;
+    background-color: red;
+    border-radius: 0% 0% 50% 50%;
+    position: absolute;
+    bottom: 0;
+    left: 15px;
+}
+#stomach {
+    height: 230px;
+    width: 180px;
+    background-color: gray;
+    border-radius: 20px;
+    margin-top: 10px;
+    box-shadow: 10px 0px 45px red;
+    animation-name: example1;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+@keyframes example1 {
+    0%{top:0px;background-color: yellow;}
+    25%{top:0px;background-color: rosybrown;}
+    50%{top:0px;background-color: brown;}
+    75%{top:0px;background-color: aqua;}
+    100%{top:0px;background-color: tan;}
+}
+#hands {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-right: -230px;
+    top: -180px;
+}
+@keyframes changelhand
+{
+    100%{transform: rotate(360deg);}
+    
+}
+
+.hand {
+    background-color: black;
+    height: 125px;
+    width: 20px;
+    margin-left :-230px ;
+    border-radius: 30%;
+    transform-origin: top;
+     animation-name: example;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation: changelhand 0.9s infinite ease-in-out;
+}
+#legs {
+    display: flex;
+    justify-content: space-between;
+    margin-top: -120px;
+    margin-right: 50px;
+}
+.leg {
+    background-color: black;
+    height: 150px;
+    width: 20px;
+    /* border-style: groove; */
+    border-radius: 30%;
+    margin-left: 50px;
+     animation-name: example;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation: changelleg 0.9s infinite ease-in-out;
+
+}@keyframes changelleg
+{
+    0%{transform: rotate(0deg);}
+    25%{transform: rotate(45deg);}
+    50%{transform: rotate(-45deg);}
+    100%{transform: rotate(0deg);}
+}
+.leg.left{
+    left: 20px;
+}
+.leg.right{
+    right: 20px;
+}
+@keyframes danceSteps {
+    0%   { transform: translateX(0) rotate(0deg); }
+    15%  { transform: translateX(-50px); }      /* Step left */
+    30%  { transform: translateX(50px); }       /* Step right */
+    45%  { transform: rotate(360deg); }         /* Spin */
+    60%  { transform: translateY(-30px); }      /* Hop */
+    75%  { transform: translateY(0); }          
+    100% { transform: translateX(0) rotate(0deg); }
+}
+
+@keyframes armWave {
+    0% { transform: rotate(20deg); }
+    100% { transform: rotate(-20deg); }
+}
+audio{
+    margin-top: 500px;
+    margin-right: 200px;
+}
